@@ -74,3 +74,17 @@ npm install
 	5.	User can review reports and track progress
 
 Detailed flow diagrams are available in docs/.
+
+🗺️ Roadmap
+	•	Role-specific interview packs
+	•	Behavioral and technical scoring metrics
+	•	Multi-language interview support
+	•	Interview analytics dashboard
+	•	Resume-based question generation
+
+⸻
+
+🤝 Contributing
+
+Contributions are welcome.
+Please open an issue to discuss improvements or submit a pull request.
