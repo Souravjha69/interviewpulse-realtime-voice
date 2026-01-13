@@ -6,14 +6,10 @@ import { z } from "zod";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { toast } from "sonner";
 import {
   Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
+  
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
@@ -38,9 +34,13 @@ const AuthForm = ({ type }: { type: FormType }) => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-  }
+    try{
 
+    }catch(error) {
+      console.log(error);
+      toast.error(`There was an error: ${error}`);
+    }
+  }
   const isSignIn = type === "sign-in";
 
   return (
