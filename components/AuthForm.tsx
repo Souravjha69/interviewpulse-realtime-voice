@@ -7,11 +7,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { toast } from "sonner";
-import {
-  Form,
-  
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import {Form} from "@/components/ui/form";
 
 const authFormSchema = (type: FormType) => {
   return z.object({
@@ -35,7 +31,11 @@ const AuthForm = ({ type }: { type: FormType }) => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     try{
-
+      if(type === "sign-in") {
+        console.log('SIGN UP', values);
+      } else{
+        console.log('SIGN IN', values);
+      }
     }catch(error) {
       console.log(error);
       toast.error(`There was an error: ${error}`);
