@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   FormControl,
+  FormDescription,
   FormItem,
   FormLabel,
   FormMessage,
@@ -14,6 +15,7 @@ interface FormFieldProps<T extends FieldValues> {
   label: string;
   placeholder?: string;
   type?: 'text' | 'email' | 'password' | 'file';
+  description?: string;
 }
 
 const FormField = <T extends FieldValues>({
@@ -21,7 +23,8 @@ const FormField = <T extends FieldValues>({
   name,
   label,
   placeholder,
-  type = 'text',
+  type = "text",
+  description,
 }: FormFieldProps<T>) => (
   <Controller
     control={control}
@@ -30,12 +33,13 @@ const FormField = <T extends FieldValues>({
       <FormItem>
         <FormLabel className="label">{label}</FormLabel>
         <FormControl>
-          <Input placeholder={placeholder} type={type} {...field} />
+          <Input className='input' type={type} placeholder={placeholder} {...field} />
         </FormControl>
+        {description ? <FormDescription>{description}</FormDescription> : null}
         <FormMessage />
       </FormItem>
     )}
   />
-);
+)
 
 export default FormField
